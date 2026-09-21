@@ -1,0 +1,8 @@
+name = "RML Template"
+version = "1.0.0"
+author = "RobloxModLoader"
+description = "Anything you want!"
+
+[datamodel.context]
+standalone = ["hello.luau", "common.luau"]
+edit = ["ingame.luau"]
