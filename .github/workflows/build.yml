@@ -19,7 +19,9 @@ jobs:
           rm -rf build
           mkdir -p build
           zip -r "build/release.zip" scripts mod.toml
-      - name: Upload release
-        uses: softprops/action-gh-release@v1
+      - uses: actions/upload-artifact@v7
         with:
-          files: build/release.zip
+          name: release
+          path: build/release.zip
+          if-no-files-found: error
+          archive: false
