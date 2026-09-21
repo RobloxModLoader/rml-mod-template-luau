@@ -17,10 +17,10 @@ jobs:
       - name: Create release
         run: |
           mkdir -p build
-          zip -r build/release.zip . -x ".git/*" ".gitignore" ".github/*" "build/*"
+          zip -r build/release.zip "scripts" "mod.toml"
       - uses: actions/upload-artifact@v7
         with:
-          name: release
+          name: mod
           path: build/release.zip
           if-no-files-found: error
           archive: false
