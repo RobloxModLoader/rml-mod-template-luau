@@ -14,13 +14,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
-      - name: Create release
+      - name: Build release
         run: |
+          rm -rf build
           mkdir -p build
-          zip -r build/release.zip "scripts" "mod.toml"
-      - uses: actions/upload-artifact@v7
+          zip -r "build/release.zip" scripts mod.toml
+      - name: Upload release
+        uses: softprops/action-gh-release@v1
         with:
-          name: mod
-          path: build/release.zip
-          if-no-files-found: error
-          archive: false
+          files: build/release.zip

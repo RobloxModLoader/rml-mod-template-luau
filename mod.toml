@@ -5,4 +5,6 @@ description = "Anything you want!"
 
 [datamodel.context]
 standalone = ["hello.luau", "common.luau"]
-edit = ["ingame.luau"]
+edit = ["common.luau"]
+client = ["ingame/client.luau"]
+server = ["ingame/server.luau"]
